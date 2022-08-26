@@ -1,0 +1,35 @@
+#! /bin/bash
+PROMPT_COMMAND=__prompt_command
+
+RETURN_CODE_PROMPT=0
+
+__prompt_command() {
+    local EXIT="$?"
+    PS1='\[\e[?25h\]'
+
+    local Gre='\[\e[1;92m\]'
+    local Yel='\[\e[1;93m\]'
+    local Red='\[\e[1;91m\]'
+    local Def='\[\e[0m\]'
+
+    if [ $EXIT != 0 ]; then
+        local RetCol="${Red}" # Add red if exit code non 0
+    else
+        local RetCol="${Gre}"
+    fi
+
+    if [ $RETURN_CODE_PROMPT != 0 ]; then
+    PS1+="${Def}[${RetCol}`printf '%3s' "$EXIT"`${Def}] "
+    fi
+
+    PS1+="${Def}[${RetCol}`printf '%3s' "$EXIT"`${Def}] ${Yel}\u: ${Gre}\w${Def}$ "  # edit this
+}
+
+
+function toggle_return_code(){
+    if [ $RETURN_CODE_PROMPT != 0 ]; then
+        RETURN_CODE_PROMPT=0
+    else
+        RETURN_CODE_PROMPT=1
+    fi
+}
