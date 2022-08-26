@@ -11,7 +11,7 @@ REMOVE="firefox remina"
 
 apt-get update
 
-#download and install apps
+# download and install apps
 for url in $DOWNLOAD
 do 
     wget -O package.deb $url
@@ -19,14 +19,17 @@ do
 done
 rm package.deb
 
-#install packages
+# install packages
 apt-get install -y $INSTALL
 apt purge $REMOVE
 
-#setup grub theme
+# setup grub theme
 tar -xf vimix.tar.xz
 cd Vimix-1080p
 ./install.sh&
 
 # copy dotfiles
 cp -r dotfiles/* ~/
+
+# copy gnome terminal profile
+dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
