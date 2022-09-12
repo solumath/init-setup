@@ -1,6 +1,7 @@
 #!/bin/sh
 INSTALL="copyq docker docker-compose ffmpeg flake8 gimp git gnome-shell-extension-manager gnome-tweaks
-gparted htop libdvd-pkg libdvdnav4 mpv neofetch opera-stable python3-pip tmux ubuntu-restricted-extras"
+gparted htop libdvd-pkg libdvdnav4 mpv nomacs neofetch opera-stable python3-pip steam tmux 
+ubuntu-restricted-extras xsel"
 DOWNLOAD="https://discord.com/api/download?platform=linux&format=deb 
 https://go.microsoft.com/fwlink/?LinkID=760868 
 https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb 
@@ -33,3 +34,4 @@ cp -r dotfiles/* ~/
 
 # copy gnome terminal profile
 dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+dconf dump / < saved_settings.dconf
