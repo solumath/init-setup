@@ -1,5 +1,5 @@
 #!/bin/sh
-INSTALL="copyq docker docker-compose ffmpeg flake8 gimp git gnome-shell-extension-manager gnome-tweaks
+INSTALL="copyq docker docker-compose ffmpeg filezilla flake8 gimp git gnome-shell-extension-manager gnome-tweaks
 gparted htop libdvd-pkg libdvdnav4 mpv nomacs neofetch opera-stable python3-pip steam tmux 
 ubuntu-restricted-extras xsel"
 DOWNLOAD="https://discord.com/api/download?platform=linux&format=deb 
